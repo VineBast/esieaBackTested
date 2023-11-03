@@ -1,23 +1,15 @@
 package esiea.api;
 
-import java.sql.SQLException;
-
-import javax.ws.rs.DefaultValue;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import esiea.dao.ReponseVoiture;
 import esiea.dao.VoitureDAO;
 import esiea.metier.Voiture;
 import esiea.metier.Voiture.Carburant;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import utils.StringUtils;
+
+import javax.ws.rs.*;
+import java.sql.SQLException;
 
 @Path("/voiture")
 public class VoitureAPI {
@@ -121,40 +113,6 @@ public class VoitureAPI {
 		ReponseVoiture ret = new ReponseVoiture();
 		try {
 			ret = vDao.getVoitures(null, mini, nbVoitures);
-			/*vDao.getVoitures(null, mini, nbVoitures);
-			ret[0] = new Voiture();
-			ret[0].setAnnee(2008);
-			ret[0].setCarburant(Carburant.DIESEL);
-			ret[0].setFinition("Initiale");
-			ret[0].setId(1);
-			ret[0].setKm(174826);
-			ret[0].setMarque("Renault");
-			ret[0].setModele("VelSatis");
-			ret[0].setPrix(4600);
-			
-			ret[1] = new Voiture();
-			ret[1].setAnnee(2013);
-			ret[1].setCarburant(Carburant.DIESEL);
-			ret[1].setFinition("Business");
-			ret[1].setId(2);
-			ret[1].setKm(124987);
-			ret[1].setMarque("Renault");
-			ret[1].setModele("Scénic");
-			ret[1].setPrix(8800);
-
-			ret[2] = new Voiture();
-			ret[2].setAnnee(2018);
-			ret[2].setCarburant(Carburant.DIESEL);
-			ret[2].setFinition("Feel");
-			ret[2].setId(3);
-			ret[2].setKm(78730);
-			ret[2].setMarque("Citroën");
-			ret[2].setModele("Spacetourer");
-			ret[2].setPrix(29000);
-			
-			for (int i=3; i< ret.length; i++) {
-				ret[i] = ret[i%3];
-			}*/
 		} catch (SQLException sql) {
 			sql.printStackTrace();
 		}
