@@ -8,4 +8,4 @@
 ## Installation et execution des tests
 
 1. Cloner le dépôt
-2. se mettre au niveau du projet esieaBack, et lancer la commande `mvn test`
+2. se mettre au niveau du projet esieaBackTested, et lancer la commande `mvn test`
